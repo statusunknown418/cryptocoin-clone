@@ -1,4 +1,8 @@
 .container {
   display: flex;
   cursor: pointer;
+  user-select: none;
+}
+.toggleExpander {
+  position: relative;
 }

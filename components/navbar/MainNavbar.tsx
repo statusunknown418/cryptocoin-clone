@@ -1,10 +1,10 @@
 import { ExpandableDiv } from "./ExpandableDiv";
 import { NavItem } from "./NavItem";
 import { Searchbar } from "./Searchbar";
-
+import styles from "../../styles/modules/MainNavbar.module.scss";
 export const MainNavbar: React.FC = () => {
   return (
-    <nav>
+    <nav className={styles.container}>
       <NavItem name="Our App" />
       <NavItem name="Add Coin/Exchange/ICO" />
       <NavItem name="Newsletter" />

@@ -25,7 +25,7 @@ export const ExpandableDiv: React.FC<Props> = () => {
         {currentLang}
       </span>
       {expand && (
-        <div>
+        <div className={styles.toggleExpander}>
           <div>
             <p>Language Selector</p>
             <button>
