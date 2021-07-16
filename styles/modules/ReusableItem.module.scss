@@ -1,11 +1,14 @@
+@use '/styles/assets';
 .container {
   padding-left: 1rem;
   border-left: 1px solid gray;
-  //   border-right: 1px solid red;
-  //   margin-right: m;
-  display: flex;
-  align-content: center;
-  justify-content: center;
+  @include assets.flexHelper(center, center, 1rem);
+  cursor: pointer;
+
+  p:hover,
+  div:hover {
+    color: assets.$main_nav;
+  }
   p {
     text-align: center;
     color: #80a6e5;

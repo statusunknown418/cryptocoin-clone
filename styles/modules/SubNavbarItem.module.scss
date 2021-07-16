@@ -1,0 +1,7 @@
+@use '/styles/assets';
+.container {
+  @include assets.flexHelper(center, center, 1rem);
+  h4: {
+    border-bottom: 2px solid gray;
+  }
+}
