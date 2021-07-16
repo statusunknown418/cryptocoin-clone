@@ -1,5 +1,5 @@
 import { ExpandableDiv } from "./ExpandableDiv";
-import { NavItem } from "./NavItem";
+import { ReusableItem } from "./ReusableItem";
 import { Searchbar } from "./Searchbar";
 import Link from "next/link";
 import styles from "../../styles/modules/MainNavbar.module.scss";
@@ -12,11 +12,11 @@ export const MainNavbar: React.FC = () => {
           coinpaprika
         </a>
       </Link>
-      <NavItem name="Our App" imagePath="/ourCoin.svg" />
-      <NavItem name="Add Coin/Exchange/ICO" />
-      <NavItem name="Newsletter" />
-      <NavItem name="" Icon="&#x263C;" />
-      <NavItem name="English/USD" />
+      <ReusableItem name="Our App" imagePath="/ourCoin.svg" />
+      <ReusableItem name="Add Coin/Exchange/ICO" />
+      <ReusableItem name="Newsletter" />
+      <ReusableItem name="" Icon="&#x263C;" />
+      <ReusableItem name="English/USD" />
       <ExpandableDiv />
       <Searchbar />
     </nav>
