@@ -1,0 +1,9 @@
+// Colors
+$main_nav: #a6bde2;
+// Mixins
+@mixin flexHelper($align, $justify, $gap) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
