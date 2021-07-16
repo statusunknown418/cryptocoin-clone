@@ -1,9 +1,22 @@
 .container {
   padding-left: 1rem;
-  border-left: 1px solid white;
+  border-left: 1px solid gray;
   //   border-right: 1px solid red;
   //   margin-right: m;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   p {
     text-align: center;
+    color: #80a6e5;
   }
+  div {
+    color: #80a6e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.image {
+  margin-top: 0.2rem;
 }

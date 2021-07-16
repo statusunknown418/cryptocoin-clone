@@ -2,6 +2,14 @@
   display: flex;
   cursor: pointer;
   user-select: none;
+  align-items: center;
+  justify-content: center;
+  color: #80a6e5;
+  span {
+    display: inline-flex;
+
+    margin-left: 0.4rem;
+  }
 }
 .toggleExpander {
   position: relative;

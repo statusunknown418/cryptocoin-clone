@@ -1,5 +1,23 @@
 .container {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: small;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: consolas;
+    div {
+      background: url("https://static.coinpaprika.com/dist/assets/fonts/cp-logo-small.svg")
+        no-repeat 50% 50%;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 0.3rem;
+    }
+  }
 }
