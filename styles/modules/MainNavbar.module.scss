@@ -3,7 +3,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin: 0.5rem 1rem;
   font-size: small;
   a {
     display: flex;
@@ -12,12 +11,12 @@
     font-weight: bold;
     font-size: 1.2rem;
     font-family: consolas;
-    div {
+    div:first-child {
       background: url("https://static.coinpaprika.com/dist/assets/fonts/cp-logo-small.svg")
         no-repeat 50% 50%;
       height: 2rem;
       width: 2rem;
-      margin-right: 0.3rem;
+      margin-right: 0.5rem;
     }
   }
 }

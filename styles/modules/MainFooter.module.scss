@@ -2,7 +2,7 @@
 .container {
   @include assets.flexHelper(center, space-between, 0.5rem);
   font-size: small;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  margin: 1rem 0 1rem 0;
   div {
     border: none;
     padding: 0;
@@ -10,10 +10,9 @@
 }
 .breaker {
   margin-top: 2rem;
-  border-top: 1px solid gray;
+  border-top: 1px solid #505050;
   .appendices {
     color: gray;
-    margin: 0 0 0 1.5rem;
     font-size: 0.85rem;
   }
 }

@@ -1,0 +1,11 @@
+@use '/styles/assets';
+.container {
+  margin-top: auto;
+  @include assets.flexHelper(center, space-between, 1rem);
+}
+.navWrapper {
+  @include assets.flexHelper(initial, space-between, 2rem);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #505050;
+}
