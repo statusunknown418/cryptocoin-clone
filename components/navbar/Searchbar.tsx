@@ -1,11 +1,9 @@
-import { useEffect } from "react";
-import { useFetch } from "../../assets/useFetch";
 type Props = {};
 
 export const Searchbar: React.FC<Props> = () => {
   return (
     <div>
-      <nav></nav>
+      <input type="text" placeholder="Search in coinpaprika clone..." />
     </div>
   );
 };
