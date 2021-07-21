@@ -16,7 +16,7 @@ export const ListCoins: React.FC<Props> = () => {
         <p>Price</p>
         <p>1h</p>
         <p>24h</p>
-        <p>24h</p>
+        <p>7d</p>
         <p>24h</p>
         <p>24h</p>
         <p>24h</p>

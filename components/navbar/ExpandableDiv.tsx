@@ -1,7 +1,7 @@
-import { ReactComponentElement, useState } from "react";
-import styles from "../../styles/modules/ExpandableDiv.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import styles from "../../styles/modules/ExpandableDiv.module.scss";
 type Props = {};
 export const ExpandableDiv: React.FC<Props> = () => {
   const [expand, setExpand] = useState(false);

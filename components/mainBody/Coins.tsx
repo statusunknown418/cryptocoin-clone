@@ -22,7 +22,7 @@ export const Coins: React.FC<Props> = ({
       <div className={styles.container}>
         <span>{rank}</span>
         <div className={styles.regulatorName}>
-          <Image src={symbol} width={20} height={20} />
+          <Image src={symbol} width={20} height={20} alt="" />
           {name}
         </div>
         <span>{identifier.toUpperCase()}</span>
