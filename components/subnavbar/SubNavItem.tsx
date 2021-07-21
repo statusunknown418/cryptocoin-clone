@@ -9,7 +9,7 @@ type Props = {
 export const SubNavItem: React.FC<Props> = ({ href, name }) => {
   const router = useRouter();
   return (
-    <Link href={`/${href}`}>
+    <Link passHref href={`/${href}`}>
       <div className={styles.container}>
         <div
           className={

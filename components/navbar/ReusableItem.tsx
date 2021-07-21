@@ -15,7 +15,7 @@ export const ReusableItem: React.FC<Props> = ({
 }) => {
   return (
     <div className={styles.container}>
-      <Link href={`/${ref}`}>
+      <Link passHref href={`/${ref}`}>
         <div>
           <div>{Icon && Icon}</div>
           <div>
