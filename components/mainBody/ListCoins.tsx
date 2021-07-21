@@ -17,11 +17,9 @@ export const ListCoins: React.FC<Props> = () => {
         <p>1h</p>
         <p>24h</p>
         <p>7d</p>
-        <p>24h</p>
-        <p>24h</p>
-        <p>24h</p>
-        <p>24h</p>
-        <p>24h</p>
+        <p>Volume 24h</p>
+        <p>Liquidity</p>
+        <p>MarketCap</p>
       </div>
       <div className={styles.container}>
         {data.map((e) => {
