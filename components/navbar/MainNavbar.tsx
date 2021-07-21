@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "../../styles/modules/MainNavbar.module.scss";
-import { ExpandableDiv } from "./ExpandableDiv";
 import { ReusableItem } from "./ReusableItem";
 import { Searchbar } from "./Searchbar";
 export const MainNavbar: React.FC = () => {
@@ -16,8 +15,7 @@ export const MainNavbar: React.FC = () => {
       <ReusableItem name="Add Coin/Exchange/ICO" />
       <ReusableItem name="Newsletter" />
       <ReusableItem name="" Icon="&#x263C;" />
-      <ReusableItem name="English/USD" />
-      <ExpandableDiv />
+      {/* <ExpandableDiv /> */}
       <Searchbar />
     </nav>
   );
