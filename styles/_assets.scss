@@ -1,5 +1,7 @@
 // Colors
 $main_nav: #80a6e5;
+$hover_nav: #a4bee7;
+
 // Mixins
 @mixin flexHelper($align, $justify, $gap) {
   display: flex;

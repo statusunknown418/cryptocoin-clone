@@ -1,9 +1,16 @@
+@use '/styles/breakpoints.scss';
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: center;
+  gap: 2.8rem;
   font-size: small;
+  @include breakpoints.media(">=tablet", "<desktop") {
+    gap: 0rem;
+  }
+  @include breakpoints.media(">=desktop") {
+    gap: 1rem;
+  }
   a {
     display: flex;
     justify-content: center;
@@ -11,12 +18,17 @@
     font-weight: bold;
     font-size: 1.2rem;
     font-family: consolas;
-    div:first-child {
-      background: url("https://static.coinpaprika.com/dist/assets/fonts/cp-logo-small.svg")
-        no-repeat 50% 50%;
-      height: 2rem;
-      width: 2rem;
-      margin-right: 0.5rem;
-    }
+  }
+}
+
+.firstDiv {
+  margin-right: 1rem;
+
+  div:first-child {
+    background: url("https://static.coinpaprika.com/dist/assets/fonts/cp-logo-small.svg")
+      no-repeat 50% 50%;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 0.5rem;
   }
 }

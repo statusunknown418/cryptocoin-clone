@@ -9,3 +9,14 @@
   margin-bottom: 1rem;
   border-bottom: 1px solid #505050;
 }
+.info {
+  * {
+    font-size: small;
+  }
+  p {
+    color: gray;
+  }
+  span {
+    color: assets.$main_nav;
+  }
+}

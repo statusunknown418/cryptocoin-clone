@@ -1,13 +1,14 @@
 @use '/styles/assets';
 .container {
   padding-left: 1rem;
+  padding-right: 1rem;
   border-left: 1px solid gray;
-  @include assets.flexHelper(center, center, 1rem);
+  @include assets.flexHelper(center, center, 0rem);
   cursor: pointer;
 
   p:hover,
   div:hover {
-    color: assets.$main_nav;
+    color: assets.$hover_nav;
   }
   p {
     text-align: center;
