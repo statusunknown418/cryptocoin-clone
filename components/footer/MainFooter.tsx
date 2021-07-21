@@ -1,10 +1,10 @@
-import { ReusableItem } from "../navbar/ReusableItem";
 import styles from "../../styles/modules/MainFooter.module.scss";
+import { ReusableItem } from "../navbar/ReusableItem";
 type Props = {};
 
 export const MainFooter: React.FC<Props> = () => {
   let updatedTime = new Date();
-  const getTime = ` ${updatedTime.toLocaleString()} UTC`;
+  // const getTime = ` ${updatedTime.toLocaleString()} UTC`;
   return (
     <div className={styles.breaker}>
       <ul className={styles.container}>
@@ -20,7 +20,7 @@ export const MainFooter: React.FC<Props> = () => {
         <ReusableItem name="FAQ" />
         <ReusableItem name="About us" />
       </ul>
-      <p className={styles.appendices}>Last updated:{getTime}</p>
+      {/* <p className={styles.appendices}>Last updated:{getTime}</p> */}
       <p className={styles.appendices}>© coinpaprika 2021</p>
     </div>
   );

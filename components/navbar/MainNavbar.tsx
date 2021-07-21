@@ -1,13 +1,13 @@
+import Link from "next/link";
+import styles from "../../styles/modules/MainNavbar.module.scss";
 import { ExpandableDiv } from "./ExpandableDiv";
 import { ReusableItem } from "./ReusableItem";
 import { Searchbar } from "./Searchbar";
-import Link from "next/link";
-import styles from "../../styles/modules/MainNavbar.module.scss";
 export const MainNavbar: React.FC = () => {
   return (
     <nav className={styles.container}>
       <Link href="/">
-        <a>
+        <a className={styles.firstDiv}>
           <div />
           coinpaprika
         </a>
