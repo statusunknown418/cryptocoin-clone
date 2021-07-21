@@ -1,6 +1,4 @@
 {
-  "conventionalCommits.scopes": [
-    "components",
-    "package"
-  ]
+  "conventionalCommits.scopes": ["components", "package", ".config"],
+  "references.preferredLocation": "view"
 }
