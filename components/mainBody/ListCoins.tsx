@@ -26,14 +26,16 @@ export const ListCoins: React.FC<Props> = () => {
       <div className={styles.container}>
         {data.map((e) => {
           return (
-            <Coins
-              rank={e.market_cap_rank}
-              id={e.id}
-              name={e.name}
-              identifier={e.symbol}
-              symbol={e.image}
-              price={e.ath}
-            />
+            <div key={e.id}>
+              <Coins
+                rank={e.market_cap_rank}
+                id={e.id}
+                name={e.name}
+                identifier={e.symbol}
+                symbol={e.image}
+                price={e.ath}
+              />
+            </div>
           );
         })}
       </div>
