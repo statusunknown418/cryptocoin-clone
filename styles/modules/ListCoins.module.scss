@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  //   grid-template-columns: repeat(12, 1fr);
+  & :first-child {
+    text-align: left;
+    width: 350%;
+  }
+
+  & > * {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    width: 100%;
+    text-align: right;
+    border: 1px solid gray;
+    border-right: none;
+    font-size: small;
+    color: #8b8989;
+    font-weight: 700;
+  }
+  & :last-child {
+    border-right: 1px solid gray;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
