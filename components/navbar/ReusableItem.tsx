@@ -26,6 +26,7 @@ export const ReusableItem: React.FC<Props> = ({
                   src={imagePath ? imagePath : "/"}
                   width={80}
                   height={22}
+                  alt=""
                 />
               </div>
             )}
