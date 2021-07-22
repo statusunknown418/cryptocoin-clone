@@ -11,11 +11,22 @@
     padding-block: 0.5rem;
     border-left: 1px solid gray;
   }
+  // This is '# Name'
   :first-child {
     grid-column: 1 / span 2;
     text-align: start;
     padding-left: 0.5rem;
     border-left: none;
+    word-spacing: 10px;
+  }
+  // Child: '7d'
+  :nth-child(4) {
+    grid-column: span 2;
+  }
+
+  :last-child {
+    grid-column: span 2;
+    padding-right: 0.5rem;
   }
 }
 .container {
