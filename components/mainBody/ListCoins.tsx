@@ -38,7 +38,7 @@ export const ListCoins: React.FC<Props> = () => {
                 identifier={e.symbol}
                 price={e.current_price}
                 image={e.image}
-                change_24h={e.price_change_24h}
+                change_24h={e.price_change_percentage_24h}
               />
             </div>
           );

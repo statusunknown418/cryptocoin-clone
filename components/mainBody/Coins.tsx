@@ -9,6 +9,7 @@ type Props = {
   change_1h?: string | number;
   change_24h?: string | number;
   change_7d?: string | number;
+  marketCap?: number;
 };
 
 export const Coins: React.FC<Props> = ({
@@ -17,6 +18,7 @@ export const Coins: React.FC<Props> = ({
   identifier,
   price,
   image,
+  marketCap,
   change_7d,
   change_24h,
   change_1h,
@@ -29,9 +31,14 @@ export const Coins: React.FC<Props> = ({
         <span>{name}</span>
         <span>{identifier.toUpperCase()}</span>
       </div>
-      <div>
-        <p>${price}</p>
-      </div>
+      <p>${price}</p>
+      <p style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
+        {change_24h}%
+      </p>
+      <p>7d change</p>
+      <p>Volume change</p>
+      <p>Liquidity change</p>
+      <p>Market Cap change</p>
     </div>
   );
 };
