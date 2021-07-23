@@ -25,7 +25,6 @@ export const Searchbar: React.FC<Props> = () => {
       <input
         onChange={(e) => {
           console.log(e.target.value);
-          search && search.map((e) => <div>{e}</div>);
         }}
         type="text"
         placeholder="Search in coinpaprika clone"
