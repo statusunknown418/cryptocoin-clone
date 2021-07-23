@@ -18,7 +18,7 @@ export const ListCoins: React.FC<Props> = () => {
         <p>Price</p>
         <p>24h</p>
         <p>7d</p>
-        <p>Volume 24h</p>
+        <p>Volume Total</p>
         <p>Liquidity</p>
         <p>MarketCap</p>
       </div>
@@ -33,6 +33,8 @@ export const ListCoins: React.FC<Props> = () => {
                 price={e.current_price}
                 image={e.image}
                 change_24h={e.price_change_percentage_24h}
+                marketCap={e.market_cap}
+                totalVolume={e.total_volume}
               />
             </div>
           );
