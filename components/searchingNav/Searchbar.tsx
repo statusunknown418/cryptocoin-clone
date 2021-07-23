@@ -2,7 +2,6 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useFetch } from "../../assets/useFetch";
-import styles from "../../styles/modules/Searchbar.module.scss";
 // TODO finish the searchBar
 export const Searchbar: React.FC = () => {
   const [search, setSearch] = useState<Array<Object>>([]);
@@ -20,7 +19,7 @@ export const Searchbar: React.FC = () => {
     });
   };
   return (
-    <form className={styles.container}>
+    <form className="container">
       <input
         onChange={(e) => {
           console.log(e.target.value);
