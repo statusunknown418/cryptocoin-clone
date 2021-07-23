@@ -21,11 +21,11 @@
     word-spacing: 10px;
   }
   // Child: '7d'
-  :nth-child(4) {
+  > :nth-child(4) {
     grid-column: span 2;
   }
 
-  :last-child {
+  > :last-child {
     grid-column: span 2;
     padding-right: 0.5rem;
   }
