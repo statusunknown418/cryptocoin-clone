@@ -3,15 +3,14 @@
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   align-items: center;
-  padding-block: 0.4rem;
   gap: 1rem;
   border-top: none;
   border: 1px solid assets.$border_color;
-  :nth-child(4) {
+  > :nth-child(4) {
     grid-column: span 2;
   }
 
-  :last-child {
+  > :last-child {
     padding-right: 0.5rem;
     grid-column: span 2;
   }
@@ -20,22 +19,25 @@
     font-size: 13px;
     font-weight: 500;
     text-align: end;
-    margin-block: 0.2rem;
+    padding-block: 0.2rem;
   }
 }
 .nameRankImg {
   display: flex;
-  // grid-template-columns: repeat(4, 1fr);
-  grid-column: span 2;
+  grid-column: 1 / span 2;
   gap: 0.5rem;
   align-items: center;
-  margin-left: 0.5rem;
-  span:last-of-type {
-    margin-left: auto;
-  }
+  padding-left: 0.5rem;
+
+  // TODO work needed here urgently
+  // border-right: 1px solid assets.$border_color;
   // outline: 1px solid red;
-  :first-child,
-  :nth-child(3) {
+  p:last-of-type {
+    margin-left: auto;
+    padding-right: -0.5rem;
+  }
+  > :first-child,
+  > :nth-child(3) {
     color: #7a9dd7;
     text-align: start;
     text-overflow: ellipsis;
