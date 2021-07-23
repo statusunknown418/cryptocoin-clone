@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../../styles/modules/MainNavbar.module.scss";
+import { Searchbar } from "../searchingNav/Searchbar";
 import { ReusableItem } from "./ReusableItem";
-import { Searchbar } from "./Searchbar";
 export const MainNavbar: React.FC = () => {
   return (
     <nav className={styles.container}>
