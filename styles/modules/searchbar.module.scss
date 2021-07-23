@@ -1,13 +1,30 @@
+@use '../assets';
 .container {
-  display: flex;
+  @include assets.flexHelper(center, none, 0);
+  flex-direction: row-reverse;
+  height: 34px;
+  width: 25%;
+  margin-left: auto;
+
+  * {
+    color: assets.$main_text_color;
+  }
   input {
     width: 100%;
-    padding: 0.5rem;
     position: relative;
+    padding-inline: 0.5rem;
+    padding-block: 0.5rem;
+    border: 1px solid assets.$border_color;
+    border-radius: 5px;
+    text-overflow: ellipsis;
   }
   i {
-    padding: 0.5rem;
-    min-width: 40px;
     position: absolute;
+    background-color: transparent;
+    @include assets.flexHelper(center, none, 0);
+    // outline: 1px solid blue;
+    margin-left: auto;
+
+    margin-right: 0.5rem;
   }
 }

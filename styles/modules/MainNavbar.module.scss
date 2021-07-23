@@ -3,8 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2.8rem;
-  font-size: small;
+  flex-wrap: wrap;
+  * {
+    font-size: small;
+  }
+  // outline: 1px solid red;
   @include breakpoints.media(">=tablet", "<desktop") {
     gap: 0rem;
   }

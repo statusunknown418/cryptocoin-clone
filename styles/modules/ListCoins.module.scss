@@ -1,15 +1,16 @@
+@use '../assets';
 .grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 1rem;
-  border: 1px solid gray;
+  border: 1px solid assets.$border_color;
   * {
     text-align: end;
     font-size: small;
     font-weight: 700;
-    color: gray;
+    color: assets.$main_text_color;
     padding-block: 0.5rem;
-    border-left: 1px solid gray;
+    border-left: 1px solid assets.$border_color;
   }
   // This is '# Name'
   :first-child {

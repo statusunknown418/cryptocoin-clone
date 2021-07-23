@@ -1,7 +1,8 @@
 // Colors
 $main_nav: #80a6e5;
 $hover_nav: #a4bee7;
-
+$main_text_color: #9b9b9b;
+$border_color: #505050;
 // Mixins
 @mixin flexHelper($align, $justify, $gap) {
   display: flex;
