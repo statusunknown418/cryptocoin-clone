@@ -1,4 +1,15 @@
 import Image from "next/image";
+import { ReactChildren } from "react";
+import {
+  AreaChart,
+  ResponsiveContainer,
+  CartesianGrid,
+  YAxis,
+  XAxis,
+  Tooltip,
+  Area,
+} from "recharts";
+import { useFetch } from "../../assets/useFetch";
 import styles from "../../styles/modules/Coins.module.scss";
 type Props = {
   name: string;
@@ -11,9 +22,12 @@ type Props = {
   change_7d?: string | number;
   marketCap?: number;
   totalVolume: number;
+  sparkline: Array<object>;
+  id: string;
 };
 
 export const Coins: React.FC<Props> = ({
+  id,
   name,
   rank,
   identifier,
@@ -24,7 +38,21 @@ export const Coins: React.FC<Props> = ({
   change_24h,
   change_1h,
   totalVolume,
+  sparkline,
 }) => {
+  // Creating svg charts for 7d price change
+  const minimizedData = sparkline.slice(50, -1);
+  // Converting array of prices to array of obj key-value pairs
+  let obj = Object.assign({}, minimizedData);
+  let keys = Object.keys(obj);
+  const finalArrObj = keys.map((key) => {
+    let kvPair = { ...{ x: Number(key) + 1, y: obj[key] * 10 } };
+    // kvPair[key] = obj[key];
+    return kvPair;
+  });
+  // console.log(finalArrObj);
+
+  // -----------------
   const localeString = (x, sep, grp) => {
     var sx = ("" + x).split("."),
       s = "",
@@ -53,10 +81,28 @@ export const Coins: React.FC<Props> = ({
       </div>
       <p>${localeString(price, "", "")}</p>
       <p style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
-        {change_24h}%
+        {parseFloat(change_24h.toString()).toFixed(3)}%
       </p>
-      <p>7d change</p>
-      <p>{localeString(totalVolume, "", "")}</p>
+      <div className={styles.sparkline}>
+        <div>
+          {identifier ? (
+            <Image
+              // Just reversed engineered coinpaprika's work LOL
+              src={`https://graphs.coinpaprika.com/currency/chart/${identifier}-${name
+                .toLowerCase()
+                .replace(" ", "-")}/7d/chart.svg`}
+              height={20}
+              width={100}
+            />
+          ) : (
+            "Not found"
+          )}
+        </div>
+        <p style={change_7d > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
+          {parseFloat(change_7d.toString()).toFixed(3)}%
+        </p>
+      </div>
+      <p>${localeString(totalVolume, "", "")}</p>
       <p>Liquidity change</p>
       <p>${marketCap.toLocaleString()}</p>
     </div>

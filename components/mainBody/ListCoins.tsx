@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useFetch } from "../../assets/useFetch";
 import styles from "../../styles/modules/ListCoins.module.scss";
 import { Coins } from "./Coins";
@@ -7,10 +8,11 @@ export const ListCoins: React.FC<Props> = () => {
   //   const data: any[] = useFetch("https://api.coinpaprika.com/v1/coins");
 
   const mainData: any[] = useFetch(
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage='1h%2C24h%2C7d'"
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d"
   );
 
   // TODO styling
+
   return (
     <>
       <div className={styles.grid}>
@@ -28,6 +30,7 @@ export const ListCoins: React.FC<Props> = () => {
             <div key={e.id}>
               <Coins
                 rank={e.market_cap_rank}
+                id={e.id}
                 name={e.name}
                 identifier={e.symbol}
                 price={e.current_price}
@@ -35,6 +38,8 @@ export const ListCoins: React.FC<Props> = () => {
                 change_24h={e.price_change_percentage_24h}
                 marketCap={e.market_cap}
                 totalVolume={e.total_volume}
+                sparkline={e.sparkline_in_7d.price}
+                change_7d={e.price_change_percentage_7d_in_currency}
               />
             </div>
           );
