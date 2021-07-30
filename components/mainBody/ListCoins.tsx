@@ -11,23 +11,23 @@ export const ListCoins: React.FC<Props> = () => {
     "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d"
   );
 
-  // TODO styling
-
   return (
-    <>
-      <div className={styles.grid}>
-        <p># Name</p>
-        <p>Price</p>
-        <p>24h</p>
-        <p>7d</p>
-        <p>Volume Total</p>
-        <p>Liquidity</p>
-        <p>MarketCap</p>
-      </div>
-      <div className={styles.container}>
+    <table cellSpacing="0" className={styles.tableStyled}>
+      <thead className={styles.tHead}>
+        <tr className={styles.tableHeads}>
+          <th># Name</th>
+          <th>Price</th>
+          <th>24h</th>
+          <th>7d</th>
+          <th>Volume Total</th>
+          <th>Liquidity</th>
+          <th>MarketCap</th>
+        </tr>
+      </thead>
+      <tbody className={styles.tableBody}>
         {mainData.map((e) => {
           return (
-            <div key={e.id}>
+            <tr key={e.id}>
               <Coins
                 rank={e.market_cap_rank}
                 id={e.id}
@@ -41,10 +41,10 @@ export const ListCoins: React.FC<Props> = () => {
                 sparkline={e.sparkline_in_7d.price}
                 change_7d={e.price_change_percentage_7d_in_currency}
               />
-            </div>
+            </tr>
           );
         })}
-      </div>
-    </>
+      </tbody>
+    </table>
   );
 };

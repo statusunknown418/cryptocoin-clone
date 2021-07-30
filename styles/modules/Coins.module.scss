@@ -1,72 +1,33 @@
 @use '../assets';
-// TODO fix paddings with margins
-.container {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
+.nameRankImg {
+  padding-block: 0.4rem;
+  display: flex;
   align-items: center;
-  gap: 1rem;
-  border-top: none;
   border: 1px solid assets.$border_color;
-  // border logic
-  > * {
-    border-left: 1px solid assets.$border_color;
+  border-top: none;
+  border-right: none;
+  > :first-child {
+    padding-left: 1rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-inline: 0;
   }
-  > :nth-child(2n) {
-    border-left: 1px solid assets.$border_color;
-  }
-  // ---
-
-  > :nth-child(4) {
-    grid-column: span 2;
-  }
-
   > :last-child {
-    padding-right: 0.5rem;
-    grid-column: span 2;
-  }
-  * {
-    color: assets.$main_text_color;
-    font-size: 13px;
-    font-weight: 500;
-    text-align: end;
-    padding-block: 0.2rem;
-  }
+    align-items: center;
+    display: flex;
 
-  > :nth-child(5) {
-    margin-right: -0.5rem;
+    margin-inline: 0;
+    margin-left: auto;
+    margin-right: 0.5rem;
   }
 }
-.nameRankImg {
-  display: flex;
-  grid-column: 1 / span 2;
-  gap: 0.5rem;
-  align-items: center;
-  padding-left: 0.5rem;
-
-  // TODO work needed here urgently
-  // border-right: 1px solid assets.$border_color;
-  // outline: 1px solid red;
-  p:last-of-type {
-    margin-left: auto;
-    padding-right: -0.5rem;
-  }
-  > :first-child,
-  > :nth-child(3) {
-    color: #7a9dd7;
-    text-align: start;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
+.price {
+  border-left: 1px solid assets.$border_color;
+  padding-inline: 0.2rem;
 }
 .sparkline {
-  display: flex;
-  align-items: center;
-  margin-right: -0.5rem;
-  > p {
-    margin-left: auto;
-  }
-  > div {
-    margin-inline: auto;
-  }
+  padding-block: 0.3rem;
+  // outline: 1px solid red;
+  padding-inline: 0.2rem;
 }

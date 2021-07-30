@@ -50,61 +50,48 @@ export const Coins: React.FC<Props> = ({
     // kvPair[key] = obj[key];
     return kvPair;
   });
-  // console.log(finalArrObj);
-
-  // -----------------
-  const localeString = (x, sep, grp) => {
-    var sx = ("" + x).split("."),
-      s = "",
-      i,
-      j;
-    sep || (sep = " "); // default seperator
-    grp || grp === 0 || (grp = 3); // default grouping
-    i = sx[0].length;
-    while (i > grp) {
-      j = i - grp;
-      s = sep + sx[0].slice(j, i) + s;
-      i = j;
-    }
-    s = sx[0].slice(0, i) + s;
-    sx[0] = s;
-    return sx.join(".");
-  };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.nameRankImg}>
-        <p>{rank}</p>
-        <Image src={image} width={20} height={7} alt="" />
-        <p>{name}</p>
-        <p>{identifier.toUpperCase()}</p>
-      </div>
-      <p>${localeString(price, "", "")}</p>
-      <p style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
-        {parseFloat(change_24h.toString()).toFixed(3)}%
-      </p>
-      <div className={styles.sparkline}>
+    <>
+      <td className={styles.nameRankImg}>
         <div>
-          {identifier ? (
-            <Image
-              // Just reversed engineered coinpaprika's work LOL
-              src={`https://graphs.coinpaprika.com/currency/chart/${identifier}-${name
-                .toLowerCase()
-                .replace(" ", "-")}/7d/chart.svg`}
-              height={20}
-              width={100}
-            />
-          ) : (
-            "Not found"
-          )}
+          <span>{rank}</span>
+          <Image src={image} width={20} height={20} alt={`symbol of ${name}`} />
+          <span>{name}</span>
         </div>
-        <p style={change_7d > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
+        <div>
+          <span>{identifier.toUpperCase()}</span>
+        </div>
+      </td>
+      <td className={styles.price}>${price.toLocaleString()}</td>
+      <td
+        className={styles.sparkline}
+        style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}
+      >
+        {parseFloat(change_24h.toString()).toFixed(3)}%
+      </td>
+      <td className={styles.sparkline}>
+        {identifier ? (
+          <Image
+            // Just reversed engineered coinpaprika's work LOL
+            src={`https://graphs.coinpaprika.com/currency/chart/${identifier}-${name
+              .toLowerCase()
+              .replace(" ", "-")}/7d/chart.svg`}
+            height={20}
+            width={100}
+          />
+        ) : (
+          "Not found"
+        )}
+        <span
+          style={change_7d > 0 ? { color: "#409e08" } : { color: "#b5483b" }}
+        >
           {parseFloat(change_7d.toString()).toFixed(3)}%
-        </p>
-      </div>
-      <p>${localeString(totalVolume, "", "")}</p>
-      <p>Liquidity change</p>
-      <p>${marketCap.toLocaleString()}</p>
-    </div>
+        </span>
+      </td>
+      <td className={styles.sparkline}>${totalVolume.toLocaleString()}</td>
+      <td className={styles.sparkline}>Liquidity change</td>
+      <td className={styles.sparkline}>${marketCap.toLocaleString()}</td>
+    </>
   );
 };

@@ -2,18 +2,6 @@ import Head from "next/head";
 import { ListCoins } from "../components/mainBody/ListCoins";
 // Since index.tsx is the main entry and Currencies points to here, main components will be placed here
 export default function Home() {
-  const chartData = [
-    { x: 1, y: 233 },
-    { x: 2, y: 614 },
-    { x: 3, y: 567 },
-    { x: 4, y: 134 },
-    { x: 5, y: 235 },
-    { x: 6, y: 123 },
-    { x: 7, y: 431 },
-    { x: 8, y: 210 },
-    { x: 9, y: 123 },
-  ];
-
   return (
     <div>
       <Head>
