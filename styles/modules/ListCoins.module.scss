@@ -1,13 +1,15 @@
+@use '/styles/breakpoints.scss';
 @use '../assets';
 .tableStyled {
-  margin-inline: auto;
+  padding-inline: auto;
+  border-collapse: collapse;
   min-width: 100%;
   line-height: 16px;
   * {
     color: assets.$main_text_color;
     font-size: 0.85rem;
-    margin-inline: auto;
-    margin-block: auto;
+    padding-inline: auto;
+    padding-block: auto;
   }
   .tableHeads {
     > :first-child {
@@ -31,5 +33,4 @@
   }
 }
 .tableBody {
-  overflow-x: scroll;
 }

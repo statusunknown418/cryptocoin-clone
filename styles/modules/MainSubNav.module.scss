@@ -1,17 +1,35 @@
+@use '/styles/breakpoints.scss';
 @use '/styles/assets';
 .container {
   margin-top: auto;
   @include assets.flexHelper(center, space-between, 1rem);
+  @include breakpoints.media(">=phone", "<tablet") {
+    overflow: scroll;
+  }
 }
 .navWrapper {
   @include assets.flexHelper(initial, space-between, 2rem);
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #505050;
+  @include breakpoints.media(">=phone", "<tablet") {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .info {
-  * {
+  @include breakpoints.media(">=phone", "<tablet") {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  display: flex;
+  flex-direction: column;
+  > * {
     font-size: small;
+    margin: 0;
   }
   p {
     color: gray;
