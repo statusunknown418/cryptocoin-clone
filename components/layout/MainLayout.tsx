@@ -5,14 +5,6 @@ import { MainSubNav } from "../subnavbar/MainSubNav";
 type Props = {};
 
 export const MainLayout: React.FC<Props> = ({ children }) => {
-  // const wrapper: CSSProperties = {
-  //   display: "flex",
-  //   flexDirection: "column",
-
-  //   margin: "1rem 20rem 1rem 20rem",
-  // };
-
-  // TODO fix media queries for UI
   return (
     <>
       <header className={styles.wrapper}>

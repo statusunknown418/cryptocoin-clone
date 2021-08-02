@@ -7,12 +7,6 @@ export const MainSubNav: React.FC<Props> = () => {
   // TODO find type implementation for array ob key value object
   const data: any = useFetch("https://api.coinpaprika.com/v1/global");
 
-  // TODO make function to separate each 3 digits
-  // const separate = (n: number) => {
-  //   const arrOfNumn = n.toString().split("");
-  //   console.log(arrOfNumn);
-  // };
-  // separate(data.market_cap_usd);
   return (
     <nav className={styles.navWrapper}>
       <div className={styles.container}>

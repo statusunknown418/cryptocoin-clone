@@ -54,8 +54,8 @@ export const Coins: React.FC<Props> = ({
   return (
     <>
       <td className={styles.nameRankImg}>
+        <span>{rank}</span>
         <div>
-          <span>{rank}</span>
           <Image src={image} width={20} height={20} alt={`symbol of ${name}`} />
           <span>{name}</span>
         </div>
