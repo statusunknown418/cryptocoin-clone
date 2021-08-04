@@ -1,7 +1,6 @@
 .grid {
-  //   display: grid;
-  //   grid-template-columns: auto;
-  //   gap: 1rem;
-  //   place-items: center;
-  //   grid-auto-flow: row;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
 }
