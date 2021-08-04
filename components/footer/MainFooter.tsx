@@ -8,17 +8,17 @@ export const MainFooter: React.FC<Props> = () => {
   return (
     <div className={styles.breaker}>
       <ul className={styles.container}>
-        <ReusableItem name="Terms of Use" />
-        <ReusableItem name="Privacy Policy" />
-        <ReusableItem name="Contact" />
-        <ReusableItem name="Ads on Coinpaprika" />
-        <ReusableItem name="Add Coin/Exchange/ICO" />
-        <ReusableItem name="API" />
-        <ReusableItem name="Tutorials" />
-        <ReusableItem name="Blog" />
-        <ReusableItem name="Converter" />
-        <ReusableItem name="FAQ" />
-        <ReusableItem name="About us" />
+        <p>Terms of Use</p>
+        <p>Privacy Policy</p>
+        <p>Contact</p>
+        <p>Ads on Coinpaprika</p>
+        <p>Add Coin/Exchange/ICO</p>
+        <p>API</p>
+        <p>Tutorials</p>
+        <p>Blog</p>
+        <p>Converter</p>
+        <p>FAQ</p>
+        <p>About us</p>
       </ul>
       {/* <p className={styles.appendices}>Last updated:{getTime}</p> */}
       <p className={styles.appendices}>© coinpaprika 2021</p>

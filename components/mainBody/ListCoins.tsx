@@ -12,39 +12,41 @@ export const ListCoins: React.FC<Props> = () => {
   );
 
   return (
-    <table cellSpacing="0" className={styles.tableStyled}>
-      <thead className={styles.tHead}>
-        <tr className={styles.tableHeads}>
-          <th># Name</th>
-          <th>Price</th>
-          <th>24h</th>
-          <th>7d</th>
-          <th>Volume Total</th>
-          <th>Liquidity</th>
-          <th>MarketCap</th>
-        </tr>
-      </thead>
-      <tbody className={styles.tableBody}>
-        {mainData.map((e) => {
-          return (
-            <tr key={e.id}>
-              <Coins
-                rank={e.market_cap_rank}
-                id={e.id}
-                name={e.name}
-                identifier={e.symbol}
-                price={e.current_price}
-                image={e.image}
-                change_24h={e.price_change_percentage_24h}
-                marketCap={e.market_cap}
-                totalVolume={e.total_volume}
-                sparkline={e.sparkline_in_7d.price}
-                change_7d={e.price_change_percentage_7d_in_currency}
-              />
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className={styles.region}>
+      <table cellSpacing="0" className={styles.tableStyled}>
+        <thead className={styles.tHead}>
+          <tr className={styles.tableHeads}>
+            <th># Name</th>
+            <th>Price</th>
+            <th>24h</th>
+            <th>7d</th>
+            <th>Volume Total</th>
+            <th>Liquidity</th>
+            <th>MarketCap</th>
+          </tr>
+        </thead>
+        <tbody className={styles.tableBody}>
+          {mainData.map((e) => {
+            return (
+              <tr key={e.id}>
+                <Coins
+                  rank={e.market_cap_rank}
+                  id={e.id}
+                  name={e.name}
+                  identifier={e.symbol}
+                  price={e.current_price}
+                  image={e.image}
+                  change_24h={e.price_change_percentage_24h}
+                  marketCap={e.market_cap}
+                  totalVolume={e.total_volume}
+                  sparkline={e.sparkline_in_7d.price}
+                  change_7d={e.price_change_percentage_7d_in_currency}
+                />
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };

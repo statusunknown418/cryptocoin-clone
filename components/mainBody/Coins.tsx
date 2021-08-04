@@ -64,21 +64,18 @@ export const Coins: React.FC<Props> = ({
         </div>
       </td>
       <td className={styles.price}>${price.toLocaleString()}</td>
-      <td
-        className={styles.sparkline}
-        style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}
-      >
+      <td style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
         {parseFloat(change_24h.toString()).toFixed(3)}%
       </td>
       <td className={styles.sparkline}>
-        {identifier ? (
+        {sparkline ? (
           <Image
             // Just reversed engineered coinpaprika's work LOL
             src={`https://graphs.coinpaprika.com/currency/chart/${identifier}-${name
               .toLowerCase()
               .replace(" ", "-")}/7d/chart.svg`}
             height={20}
-            width={100}
+            width={80}
           />
         ) : (
           "Not found"
@@ -89,9 +86,9 @@ export const Coins: React.FC<Props> = ({
           {parseFloat(change_7d.toString()).toFixed(3)}%
         </span>
       </td>
-      <td className={styles.sparkline}>${totalVolume.toLocaleString()}</td>
-      <td className={styles.sparkline}>Liquidity change</td>
-      <td className={styles.sparkline}>${marketCap.toLocaleString()}</td>
+      <td className={styles.spacer}>${totalVolume.toLocaleString()}</td>
+      <td className={styles.spacer}>Liquidity change</td>
+      <td className={styles.spacer}>${marketCap.toLocaleString()}</td>
     </>
   );
 };
