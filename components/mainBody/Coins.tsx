@@ -57,16 +57,18 @@ export const Coins: React.FC<Props> = ({
     <>
       <td className={styles.nameRankImg}>
         <span>{rank}</span>
-        <div>
-          <Image src={image} width={20} height={20} alt={`symbol of ${name}`} />
-          <span>{name}</span>
-        </div>
-        <div>
-          <span>{identifier.toUpperCase()}</span>
-        </div>
+        <Image src={image} width={20} height={20} alt={`symbol of ${name}`} />
+        <span>{name}</span>
+        <span>{identifier.toUpperCase()}</span>
       </td>
       <td className={styles.price}>${price.toLocaleString()}</td>
-      <td style={change_24h > 0 ? { color: "#409e08" } : { color: "#b5483b" }}>
+      <td
+        style={
+          change_24h > 0
+            ? { color: "#409e08", textAlign: "center" }
+            : { color: "#b5483b", textAlign: "center" }
+        }
+      >
         {parseFloat(change_24h.toString()).toFixed(3)}%
       </td>
       <td className={styles.sparkline}>

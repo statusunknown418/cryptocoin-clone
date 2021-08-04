@@ -13,7 +13,7 @@
   border-spacing: 0;
   white-space: nowrap;
   min-width: 100%;
-  line-height: 16px;
+  line-height: 18px;
   * {
     color: assets.$main_text_color;
     font-size: 0.8rem;
@@ -44,7 +44,6 @@
 .tHead {
   th {
     padding: 0.5rem;
-    outline: 1px solid green;
     margin-inline: 0;
     font-weight: 850;
   }
