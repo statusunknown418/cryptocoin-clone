@@ -1,6 +1,18 @@
 @use '/styles/assets';
+@use '../breakpoints.scss';
 .container {
   @include assets.flexHelper(center, space-between, 0.5rem);
+  @include breakpoints.media(">=phone", "<tablet") {
+    display: flex;
+    flex-direction: column;
+    & div,
+    p {
+      width: 100%;
+      border-bottom: 1px solid assets.$border_color;
+      text-align: start;
+      color: assets.$main_nav;
+    }
+  }
   font-size: small;
   margin: 1rem 0 1rem 0;
   div {

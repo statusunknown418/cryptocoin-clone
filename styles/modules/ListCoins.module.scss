@@ -1,8 +1,17 @@
 @use '/styles/breakpoints.scss';
 @use '../assets';
+.region {
+  overflow: auto;
+  min-width: 95vw;
+  border: 1px solid assets.$border_color;
+}
 .tableStyled {
+  width: 100%;
+  z-index: 9999;
   padding-inline: auto;
   border-collapse: collapse;
+  border-spacing: 0;
+  white-space: nowrap;
   min-width: 100%;
   line-height: 16px;
   * {
@@ -12,10 +21,15 @@
     padding-block: auto;
   }
   .tableHeads {
+    position: sticky;
+    inset: 0;
+    z-index: 999;
     > :first-child {
       text-align: start;
       white-space: nowrap;
       text-overflow: ellipsis;
+      position: sticky;
+      inset: 0;
     }
     > * {
       border: 1px solid assets.$border_color;
@@ -31,6 +45,4 @@
   th {
     padding: 0.5rem;
   }
-}
-.tableBody {
 }

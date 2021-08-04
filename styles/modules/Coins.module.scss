@@ -1,13 +1,16 @@
 @use '/styles/breakpoints.scss';
 @use '../assets';
 .nameRankImg {
+  position: sticky;
+  inset: 0;
+  z-index: 899;
   padding-block: 0.4rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
   border: 1px solid assets.$border_color;
+  border-left: none;
   border-top: none;
-  border-right: none;
   > :first-child {
     > :nth-child(3) {
       color: assets.$main_nav;
@@ -43,7 +46,17 @@
   padding-inline: 0.2rem;
 }
 .sparkline {
+  // TODO helppppppppppppppppppppppppppp
+  min-width: 90%;
   padding-block: 0.3rem;
-  // outline: 1px solid red;
+  padding-inline: 0.2rem;
+  // @include assets.flexHelper("center", "space-around", "0.5rem");
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.spacer {
   padding-inline: 0.2rem;
 }
