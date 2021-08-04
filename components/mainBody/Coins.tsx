@@ -24,6 +24,7 @@ type Props = {
   totalVolume: number;
   sparkline: Array<object>;
   id: string;
+  circulatingSupply?: number;
 };
 
 export const Coins: React.FC<Props> = ({
@@ -37,6 +38,7 @@ export const Coins: React.FC<Props> = ({
   change_7d,
   change_24h,
   change_1h,
+  circulatingSupply,
   totalVolume,
   sparkline,
 }) => {
@@ -87,7 +89,10 @@ export const Coins: React.FC<Props> = ({
         </span>
       </td>
       <td className={styles.spacer}>${totalVolume.toLocaleString()}</td>
-      <td className={styles.spacer}>Liquidity change</td>
+      {/* <td className={styles.supply}>
+        <span>{circulatingSupply}</span>
+        <span>{identifier.toUpperCase()}</span>
+      </td> */}
       <td className={styles.spacer}>${marketCap.toLocaleString()}</td>
     </>
   );

@@ -20,8 +20,8 @@ export const ListCoins: React.FC<Props> = () => {
             <th>Price</th>
             <th>24h</th>
             <th>7d</th>
-            <th>Volume Total</th>
-            <th>Liquidity</th>
+            <th>Total Volume</th>
+            {/* <th>Supply</th> */}
             <th>MarketCap</th>
           </tr>
         </thead>
@@ -41,6 +41,7 @@ export const ListCoins: React.FC<Props> = () => {
                   totalVolume={e.total_volume}
                   sparkline={e.sparkline_in_7d.price}
                   change_7d={e.price_change_percentage_7d_in_currency}
+                  // circulatingSupply={e.max_supply}
                 />
               </tr>
             );

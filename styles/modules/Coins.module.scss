@@ -1,5 +1,6 @@
 @use '/styles/breakpoints.scss';
 @use '../assets';
+
 .nameRankImg {
   position: sticky;
   inset: 0;
@@ -58,6 +59,7 @@
 }
 
 .spacer {
-  padding-inline: 0.2rem;
+  text-align: end;
+  padding-inline: 0.5rem;
   padding-block: 0.3rem;
 }
