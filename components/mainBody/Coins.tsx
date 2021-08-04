@@ -1,14 +1,4 @@
 import Image from "next/image";
-import { ReactChildren } from "react";
-import {
-  AreaChart,
-  ResponsiveContainer,
-  CartesianGrid,
-  YAxis,
-  XAxis,
-  Tooltip,
-  Area,
-} from "recharts";
 import { useFetch } from "../../assets/useFetch";
 import styles from "../../styles/modules/Coins.module.scss";
 type Props = {

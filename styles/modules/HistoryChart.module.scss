@@ -1,0 +1,58 @@
+@use '../assets';
+@use '../breakpoints.scss';
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container {
+  border: 1px solid assets.$border_color;
+  * {
+    font-size: 13px;
+  }
+  & > h2 {
+    @extend .flex;
+    background-color: #3b3b3b;
+    font-weight: bold;
+    border: 1px solid assets.$border_color;
+    padding: 0.5rem;
+    & div {
+      @extend .flex;
+      & button {
+        background-color: transparent;
+        border: none;
+        color: assets.$main_nav;
+      }
+      gap: 0.5rem;
+      background-color: transparent;
+    }
+  }
+  & canvas {
+    width: 100%;
+    padding: 0.5rem;
+  }
+}
+.prices {
+  * {
+    color: assets.$main_text_color;
+  }
+  // Select the "Total < text >"
+  & > div:first-child > :first-child {
+    color: assets.$main_nav;
+  }
+  & h3 {
+    border-right: 1px solid assets.$border_color;
+    background-color: #3b3b3b;
+    padding: 0.5rem;
+    min-width: 50%;
+    font-weight: 600;
+    color: assets.$main_text_color;
+  }
+  & > div {
+    @extend .flex;
+    // background-color: black;
+    border: 1px solid assets.$border_color;
+    padding-right: 0.5rem;
+  }
+}
