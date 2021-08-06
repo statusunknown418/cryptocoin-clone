@@ -1,0 +1,72 @@
+@use '../assets';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  & * {
+    list-style: none;
+  }
+}
+.header {
+  & h2 {
+    font-family: "Consolas";
+    margin-bottom: 1.5rem;
+    font-size: 1.4em;
+  }
+  & p {
+    font-size: 0.75rem;
+    color: assets.$main_text_color;
+  }
+}
+.card {
+  background-color: #2b332b;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px #1c1c1c;
+  & * {
+    background-color: transparent;
+    font-size: 0.75rem;
+    color: #3c9b09;
+  }
+  & button {
+    border: none;
+    background-color: #80a6e5;
+    color: white;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    border-radius: 5px;
+  }
+}
+.portfoliosList {
+  @include assets.flexHelper("center", "center", "1rem");
+  width: 100%;
+  border-bottom: 1px solid assets.$border_color;
+  & * {
+    list-style: none;
+    font-size: small;
+  }
+  & li {
+    border-bottom: 2px solid assets.$border_color;
+    padding-bottom: 0.2rem;
+  }
+}
+.searchBar {
+  width: 100%;
+  * {
+    font-size: small;
+    color: assets.$main_text_color;
+  }
+  input {
+    border: 1px solid assets.$border_color;
+    height: 2rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    &:focus {
+      outline: 1px solid assets.$main_nav;
+    }
+  }
+}

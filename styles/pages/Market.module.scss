@@ -1,6 +1,10 @@
-.grid {
+@use '../breakpoints.scss';
+.wrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
+  > div {
+    outline: 1px solid white;
+    width: 100%;
+  }
 }

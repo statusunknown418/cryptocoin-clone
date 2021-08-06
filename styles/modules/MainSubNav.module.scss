@@ -5,10 +5,11 @@
   @include assets.flexHelper(center, space-between, 1rem);
   @include breakpoints.media(">=phone", "<tablet") {
     overflow: scroll;
+    gap: 0;
   }
 }
 .navWrapper {
-  @include assets.flexHelper(initial, space-between, 2rem);
+  @include assets.flexHelper(initial, space-between, 1.5rem);
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid #505050;

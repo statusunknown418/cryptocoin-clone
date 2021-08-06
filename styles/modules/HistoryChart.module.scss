@@ -1,58 +1,98 @@
 @use '../assets';
 @use '../breakpoints.scss';
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.container {
+// .flex {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
+// .canvasContainer {
+//   padding: 0.5rem;
+// }
+// .container {
+//   & button {
+//     cursor: pointer;
+//     &:hover {
+//       color: assets.$hover_nav;
+//     }
+//   }
+//   border: 1px solid assets.$border_color;
+//   * {
+//     font-size: 13px;
+//   }
+//   & > h2 {
+//     @extend .flex;
+//     background-color: #3b3b3b;
+//     font-weight: bold;
+//     border: 1px solid assets.$border_color;
+//     padding: 0.5rem;
+//     & div {
+//       @extend .flex;
+//       & button {
+//         background-color: transparent;
+//         border: none;
+//         color: assets.$main_nav;
+//       }
+//       gap: 0.5rem;
+//       background-color: transparent;
+//     }
+//   }
+// }
+// .prices {
+//   * {
+//     color: assets.$main_text_color;
+//   }
+//   // Select the "Total < text >"
+//   & > div:first-child > :first-child {
+//     color: assets.$main_nav;
+//   }
+//   & h3 {
+//     border-right: 1px solid assets.$border_color;
+//     background-color: #3b3b3b;
+//     padding: 0.5rem;
+//     min-width: 50%;
+//     font-weight: 600;
+//     color: assets.$main_text_color;
+//   }
+//   & > div {
+//     @extend .flex;
+//     border: 1px solid assets.$border_color;
+//     padding-right: 0.5rem;
+//   }
+// }
+.styledTable {
+  font-size: 0.7rem;
+  border-collapse: collapse;
+  border-spacing: 0;
   border: 1px solid assets.$border_color;
-  * {
-    font-size: 13px;
-  }
-  & > h2 {
-    @extend .flex;
-    background-color: #3b3b3b;
-    font-weight: bold;
-    border: 1px solid assets.$border_color;
-    padding: 0.5rem;
-    & div {
-      @extend .flex;
-      & button {
-        background-color: transparent;
-        border: none;
-        color: assets.$main_nav;
+  thead {
+    th {
+      width: 50%;
+      padding-block: 0.5rem;
+      padding-inline: 1rem;
+      text-align: start;
+      border: 1px solid assets.$border_color;
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.3rem;
+        button {
+          font-size: 0.7rem;
+          color: assets.$main_nav;
+          border: none;
+        }
       }
-      gap: 0.5rem;
-      background-color: transparent;
     }
   }
-  & canvas {
-    width: 100%;
-    padding: 0.5rem;
-  }
-}
-.prices {
-  * {
-    color: assets.$main_text_color;
-  }
-  // Select the "Total < text >"
-  & > div:first-child > :first-child {
-    color: assets.$main_nav;
-  }
-  & h3 {
-    border-right: 1px solid assets.$border_color;
-    background-color: #3b3b3b;
-    padding: 0.5rem;
-    min-width: 50%;
-    font-weight: 600;
-    color: assets.$main_text_color;
-  }
-  & > div {
-    @extend .flex;
-    // background-color: black;
-    border: 1px solid assets.$border_color;
-    padding-right: 0.5rem;
+
+  tbody {
+    > :first-child > :first-child {
+      padding-block: 0.5rem;
+      padding-inline: 1rem;
+      outline: 1px solid blue;
+    }
+    .graphcontainer {
+      padding: 1rem;
+    }
   }
 }
