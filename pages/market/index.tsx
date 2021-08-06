@@ -4,9 +4,10 @@ import { HistoryChart } from "../../components/marketPage/HistoryChart";
 import styles from "../../styles/pages/Market.module.scss";
 export default function marketOverview() {
   return (
-    <div className={styles.grid}>
+    <div className={styles.wrapper}>
       <HistoryChart name="Market Cap" />
       <HistoryChart name="Bitcoin" designation="BTC" />
+      {/* <HistoryChart name="Bitcoin" designation="BTC" /> */}
     </div>
   );
 }

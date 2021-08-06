@@ -1,6 +1,9 @@
+import HighchartsReact from "highcharts-react-official";
+import Highcharts from "highcharts";
 import { useEffect, useRef } from "react";
 import { useFetch } from "../../assets/useFetch";
 import styles from "../../styles/modules/HistoryChart.module.scss";
+
 const ChartJs = require("chart.js");
 type Props = {
   name: string;
@@ -13,6 +16,16 @@ export const HistoryChart: React.FC<Props> = ({ name, designation }) => {
       ? `https://api.coinpaprika.com/v1/coins/${designation.toLowerCase()}-${name.toLowerCase()}`
       : `https://api.coinpaprika.com/v1/global`
   );
+
+  const options = {
+    chart: {
+      type: "spline",
+    },
+    title: {
+      text: "",
+    },
+    series: [{ data: [1, 2, 3, 5, 7, 6, 2, 4, 8] }],
+  };
   useEffect(() => {
     if (chartRef && chartRef.current) {
       const chartInstance = new ChartJs(chartRef.current, {
@@ -63,35 +76,89 @@ export const HistoryChart: React.FC<Props> = ({ name, designation }) => {
       });
     }
   }, []);
+
   return (
-    <div className={styles.container}>
-      <h2>
-        {name}
-        <div>
-          <button>24h</button>
-          <button>7d</button>
-          <button>30d</button>
-        </div>
-      </h2>
-      <div>
-        <canvas ref={chartRef} width={500} height={250} />
-      </div>
-      <div className={styles.prices}>
-        <div>
-          <h3>{designation ? `${designation} price` : `Total ${name}`}</h3>
-          <div>126323</div>
-        </div>
-        <div>
-          <h3>% from ATH</h3>
-          <div>
-            {designation ? `$${ATH_data.ath}` : `$${ATH_data.market_cap_usd}`}
-          </div>
-        </div>
-        <div>
-          <h3>{name} ATH</h3>
-          <div>173289</div>
-        </div>
-      </div>
-    </div>
+    <table cellSpacing={0} className={styles.styledTable}>
+      <thead>
+        <th className={styles.col2}>
+          <b>{designation ? `${designation} price` : `Total ${name}`}</b>
+        </th>
+        <th>
+          <ul>
+            <button>24h</button>
+            <button>7d</button>
+            <button>30d</button>
+            <button>1y</button>
+          </ul>
+        </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td colSpan={2} className={styles.graphContainer}>
+            <div>
+              <HighchartsReact highcharts={Highcharts} options={options} />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <p>{designation ? `${designation} price` : `Total ${name}`} </p>
+          </th>
+          <td>
+            <span>6546514564</span>
+          </td>
+        </tr>
+        <tr>
+          <th>% from ATH</th>
+          <td>
+            <span>213128937</span>
+          </td>
+        </tr>
+        <tr>
+          <th>{name} ATH</th>
+          <td>
+            <span>12397810280</span>
+            <br />
+            12 May 2021
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 };
+// <div className={styles.container}>
+//   <h2>
+//     {name}
+//     <div>
+//       <button>24h</button>
+//       <button>7d</button>
+//       <button>30d</button>
+//     </div>
+//   </h2>
+//   <table>
+//     <tr>
+//       <td colSpan={2}>
+//         <div className={styles.canvasContainer}>
+//           <HighchartsReact highcharts={Highcharts} options={options} />
+//         </div>
+//         {/* <canvas ref={chartRef} /> */}
+//       </td>
+//     </tr>
+//   </table>
+//   <div className={styles.prices}>
+//     <div>
+//       <h3>{designation ? `${designation} price` : `Total ${name}`}</h3>
+//       <div>126323</div>
+//     </div>
+//     <div>
+//       <h3>% from ATH</h3>
+//       <div>
+//         {designation ? `$${ATH_data.ath}` : `$${ATH_data.market_cap_usd}`}
+//       </div>
+//     </div>
+//     <div>
+//       <h3>{name} ATH</h3>
+//       <div>173289</div>
+//     </div>
+//   </div>
+// </div>
