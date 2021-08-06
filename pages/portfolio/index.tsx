@@ -15,8 +15,8 @@ const index = () => {
       <div className={styles.card}>
         <p>
           Become a part of community. By creating your very first portfolio,
-          you'll join hundreds of other users. Build your very own portfolio
-          &and; compare it with other people.
+          you&apos;ll join hundreds of other users. Build your very own
+          portfolio &and; compare it with other people.
         </p>
         <button>Create Your Portfolio</button>
       </div>
