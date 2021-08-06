@@ -2,7 +2,6 @@ import { useRouter } from "next/dist/client/router";
 import { Searchbar } from "../../components/searchingNav/Searchbar";
 import styles from "../../styles/pages/Portfolio.module.scss";
 const index = () => {
-  const route = useRouter();
   return (
     <section className={styles.wrapper}>
       <div className={styles.header}>
