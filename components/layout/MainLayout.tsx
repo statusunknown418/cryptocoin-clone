@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "../../styles/modules/MainLayout.module.scss";
 import { MainFooter } from "../footer/MainFooter";
 import { MainNavbar } from "../navbar/MainNavbar";
@@ -12,13 +11,12 @@ export const MainLayout: React.FC<Props> = ({ children }) => {
         <MainNavbar />
         <MainSubNav />
       </header>
-      <div className={styles.wrapper}>
-        <div>{children}</div>
 
-        <footer>
-          <MainFooter />
-        </footer>
-      </div>
+      <div className={styles.wrapper}>{children}</div>
+
+      <footer className={styles.wrapper}>
+        <MainFooter />
+      </footer>
     </>
   );
 };

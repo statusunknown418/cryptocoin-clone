@@ -27,7 +27,6 @@ export const HistoryChart: React.FC<Props> = ({ name, designation }) => {
     series: [{ data: [1, 2, 3, 5, 7, 6, 2, 4, 8] }],
   };
   useEffect(() => {
-    // This was using Charts.js library
     if (chartRef && chartRef.current) {
       const chartInstance = new ChartJs(chartRef.current, {
         type: "line",
