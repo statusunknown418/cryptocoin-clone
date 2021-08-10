@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useFetch } from "../../assets/useFetch";
 import styles from "../../styles/modules/Coins.module.scss";
+import Link from "next/link";
 type Props = {
   name: string;
   rank: number;
@@ -45,11 +46,15 @@ export const Coins: React.FC<Props> = ({
 
   return (
     <>
-      <td className={styles.nameRankImg}>
-        <span>{rank}</span>
-        <Image src={image} width={20} height={20} alt={`symbol of ${name}`} />
-        <span>{name}</span>
-        <span>{identifier.toUpperCase()}</span>
+      <td>
+        <div className={styles.nameRankImg}>
+          <span>{rank}</span>
+          <Image src={image} width={20} height={20} alt={`symbol of ${name}`} />
+          <Link passHref href={`/coins/${id}`}>
+            <span>{name}</span>
+          </Link>
+          <span>{identifier.toUpperCase()}</span>
+        </div>
       </td>
       <td className={styles.price}>${price.toLocaleString()}</td>
       <td
@@ -70,6 +75,8 @@ export const Coins: React.FC<Props> = ({
               .replace(" ", "-")}/7d/chart.svg`}
             height={20}
             width={80}
+            blurDataURL={`https://graphs.coinpaprika.com/currency/chart/bitcoin/7d/chart.svg`}
+            placeholder="blur"
           />
         ) : (
           "Not found"
@@ -81,10 +88,6 @@ export const Coins: React.FC<Props> = ({
         </span>
       </td>
       <td className={styles.spacer}>${totalVolume.toLocaleString()}</td>
-      {/* <td className={styles.supply}>
-        <span>{circulatingSupply}</span>
-        <span>{identifier.toUpperCase()}</span>
-      </td> */}
       <td className={styles.spacer}>${marketCap.toLocaleString()}</td>
     </>
   );
