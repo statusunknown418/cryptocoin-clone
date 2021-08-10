@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import React, { useState } from "react";
 import parser from "html-react-parser";
 
 // Get data with server
@@ -83,16 +82,16 @@ const CoinDetails: React.FC<Props> = ({ coin }) => {
                 ({coin.market_data.price_change_percentage_24h}%)
               </p>
             </li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>{}</li>
+            <li>{}</li>
+            <li>{}</li>
+            <li>{}</li>
+            <li>{}</li>
           </ul>
         </header>
         <p className={styles.description}>
           {/* Function to parse the HTML inside the API response */}
-          {coin.description.en}
+          {parser(coin.description.en)}
         </p>
       </div>
       <div></div>
