@@ -25,10 +25,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const res =
     await fetch(`https://api.coingecko.com/api/v3/coins/${id.toString()}?localization=false
   `);
-  const marketData = await fetch(
-    `https://api.coingecko.com/api/v3/simple/price?ids=${id.toString()}&vs_currencies=usd&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true`
-  );
-  const extradata = await marketData.json();
+
   const data = await res.json();
   return {
     props: {
