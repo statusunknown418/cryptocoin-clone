@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { GitHub } from "../../assets/icons/Github";
@@ -15,6 +16,7 @@ export const MainNavbar: React.FC = () => {
         const { additionalUserInfo } = user;
         const { username } = additionalUserInfo;
         console.log(user);
+        setModal(false);
         setUser(additionalUserInfo);
         console.log(username);
       })
@@ -32,7 +34,6 @@ export const MainNavbar: React.FC = () => {
       <ReusableItem name="Add Coin/Exchange/ICO" />
       <ReusableItem name="Newsletter" />
       <ReusableItem name="" Icon="&#x263C;" />
-
       {user === null ? (
         <button
           className={styles.signInOut}
@@ -46,7 +47,12 @@ export const MainNavbar: React.FC = () => {
         </button>
       ) : (
         <div className={styles.userInfo}>
-          <img src={user.profile.avatar_url} alt={user.username} />
+          <Image
+            height={15}
+            width={15}
+            src={user.profile.avatar_url}
+            alt={user.username}
+          />
           <h3>{user.username}</h3>
           <span>&#x25BC;</span>
         </div>
