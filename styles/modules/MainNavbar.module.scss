@@ -1,5 +1,6 @@
 @use '/styles/breakpoints.scss';
 @use '../assets';
+
 .container {
   display: flex;
   align-items: center;
@@ -57,10 +58,11 @@
     visibility: visible;
     // outline: 1px solid cyan;
   }
+  border: none;
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  & a {
+  & div {
     font-family: "inter";
     font-weight: bold;
     font-size: small;
@@ -70,19 +72,76 @@
     border-left: 1px solid gray;
   }
 }
-.modal {
+.darken {
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  position: fixed;
+  z-index: 1199;
   display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  outline: 1px solid violet;
-  header {
-    color: assets.$main_text_color;
-    font-size: 1.5rem;
-    line-height: 16px;
-    text-align: end;
+  align-items: center;
+  justify-content: center;
+  .modal {
+    display: flex;
+    padding-block: 0.8rem;
+    padding-inline: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+    outline: 1px solid assets.$main_text_color;
+    position: fixed;
+    & button {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      color: rgb(218, 218, 218);
+      font-weight: 600;
+      border: 1px solid black;
+      background-color: black;
+      padding-block: 0.5rem;
+      padding-inline: 1.3rem;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    & header {
+      & span {
+        color: assets.$main_text_color;
+        cursor: pointer;
+      }
+      line-height: 16px;
+      text-align: end;
+      font-weight: bold;
+    }
+    & h2 {
+      font-size: 1.5rem;
+      font-family: "Consolas";
+      color: white;
+    }
   }
-  top: 50vh;
-  position: absolute;
-  margin-block: auto;
-  margin-inline: auto;
+}
+
+.userInfo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  &:hover {
+    filter: brightness(1.2);
+    padding: 0.4rem;
+    border-radius: 10px;
+  }
+  & img {
+    width: 20px;
+  }
+  & span {
+    font-size: 0.5rem;
+  }
+  & h3 {
+    color: assets.$main_text_color;
+  }
 }

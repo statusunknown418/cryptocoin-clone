@@ -1,0 +1,53 @@
+@use '../assets';
+.wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.header {
+  border-right: 1px solid assets.$border_color;
+  padding-right: 1rem;
+  & h2 {
+    font-family: "Consolas";
+  }
+  & :nth-child(2) {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Consolas";
+    font-size: 1.2rem;
+    color: rgb(255, 196, 0);
+  }
+  .rankCard {
+    margin-top: 0.5rem;
+    border: 1px solid assets.$border_color;
+    text-align: center;
+    padding-block: 0.2rem;
+    border-radius: 5px;
+    background-color: rgb(65, 65, 65);
+    * {
+      background-color: transparent;
+      color: rgb(180, 180, 180);
+      font-size: small;
+    }
+  }
+}
+.description {
+  color: assets.$main_text_color;
+  font-size: 0.9em;
+  & a {
+    text-decoration: underline;
+    color: assets.$main_nav;
+  }
+}
+.dataChange {
+  display: flex;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid assets.$border_color;
+
+  & :first-child {
+    & p {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+  }
+}

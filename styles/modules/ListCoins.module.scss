@@ -2,12 +2,11 @@
 @use '../assets';
 .region {
   overflow: auto;
-  min-width: 95vw;
   border: 1px solid assets.$border_color;
 }
 .tableStyled {
   width: 100%;
-  z-index: 9999;
+  z-index: 1299;
   padding-inline: auto;
   border-collapse: collapse;
   border-spacing: 0;
