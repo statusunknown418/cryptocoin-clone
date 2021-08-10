@@ -83,16 +83,16 @@ const CoinDetails: React.FC<Props> = ({ coin }) => {
                 ({coin.market_data.price_change_percentage_24h}%)
               </p>
             </li>
-            <li>{}</li>
-            <li>{}</li>
-            <li>{}</li>
-            <li>{}</li>
-            <li>{}</li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
           </ul>
         </header>
         <p className={styles.description}>
           {/* Function to parse the HTML inside the API response */}
-          {parser(coin.description.en)}
+          {coin.description.en}
         </p>
       </div>
       <div></div>
