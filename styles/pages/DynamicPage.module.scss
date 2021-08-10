@@ -3,21 +3,62 @@
   display: flex;
   gap: 1rem;
 }
+.information {
+  & a {
+    transition: color 0.2s ease;
+    &:hover {
+      color: lighten(assets.$main_nav, $amount: 15);
+    }
+  }
+  & ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    & > li > a {
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      color: assets.$main_nav;
+    }
+    & > li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+  & > h4 > span {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: assets.$main_text_color;
+    margin-right: 0.8rem;
+  }
+  & h4 {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}
+.thumbnail {
+  display: flex;
+  align-items: center;
+  gap: 0rem;
+  & h2 {
+    font-family: "Consolas";
+    font-size: 1.7rem;
+  }
+  & > p {
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    color: rgb(187, 140, 240);
+    font-weight: bold;
+  }
+}
 .header {
   border-right: 1px solid assets.$border_color;
   padding-right: 1rem;
-  & h2 {
-    font-family: "Consolas";
-  }
-  & :nth-child(2) {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-family: "Consolas";
-    font-size: 1.2rem;
-    color: rgb(255, 196, 0);
-  }
+  // }
   .rankCard {
-    margin-top: 0.5rem;
+    margin-block: 0.5rem;
     border: 1px solid assets.$border_color;
     text-align: center;
     padding-block: 0.2rem;
@@ -43,11 +84,26 @@
   padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid assets.$border_color;
-
+  gap: 1rem;
+  & > li > p {
+    font-weight: 600;
+    font-size: small;
+  }
+  & > li > :last-child {
+    font-size: 0.9rem;
+  }
   & :first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     & p {
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
+    }
+  }
+  .high24h {
+    :first-child {
+      color: assets.$main_text_color;
     }
   }
 }
