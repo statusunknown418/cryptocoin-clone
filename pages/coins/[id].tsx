@@ -20,9 +20,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // Obtaining paths and details
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = context.params.id;
-  const res =
-    await fetch(`https://api.coingecko.com/api/v3/coins/${id.toString()}?localization=false
-  `);
+  const res = await fetch(
+    `https://api.coingecko.com/api/v3/coins/${id.toString()}?localization=false
+  `
+  );
 
   const data = await res.json();
   return {
