@@ -47,12 +47,6 @@ export const MainNavbar: React.FC = () => {
         </button>
       ) : (
         <div className={styles.userInfo}>
-          <Image
-            height={15}
-            width={15}
-            src={user.profile.avatar_url}
-            alt={user.username}
-          />
           <h3>{user.username}</h3>
           <span>&#x25BC;</span>
         </div>
