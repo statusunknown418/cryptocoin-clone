@@ -12,7 +12,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     console.log(coin.id);
     return { params: { id: coin.id } };
   });
-  console.log(data);
   return {
     paths,
     fallback: false,
@@ -41,15 +40,10 @@ interface Props {
 import styles from "../../styles/pages/DynamicPage.module.scss";
 
 const CoinDetails: React.FC<Props> = ({ coin }) => {
-  const setInnerDescription = () => {
-    return { __html: `${coin.description.en}` };
-  };
-
   const styleChangerBasedOnpriceChange = (priceChange) => {
     return priceChange > 0 ? { color: "#43aa05" } : { color: "red" };
   };
 
-  console.log(coin);
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
